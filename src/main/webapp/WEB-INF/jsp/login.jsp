@@ -16,7 +16,7 @@
 			<h3>Arcenal Car Care Center</h3>
 		</div>
 		<div class="w3-col m4">
-			<a href="/viewJO">Job Orders</a>
+			<h3><a href="/viewJO">View All Job Orders</a></h3>
 		</div>
 	</div>
 	</header>
@@ -76,7 +76,7 @@
 				</div>
 			</div>
 
-			<div id="jobDesc" class="w3-row w3-padding w3-border">
+			<div id="jobDesc" class="w3-row w3-padding w3-border w3-topbar w3-bottombar w3-margin-top">
 				<div class="w3-col w3-container" style="width: 50%">
 					<label>Job Description</label> <input class="w3-input w3-border"
 						type="text" name="jobDescriptions[]" placeholder="Job Description" />
@@ -92,7 +92,7 @@
 				</div>
 			</div>
 
-			<div id="parts" class="w3-row w3-padding w3-border">
+			<div id="parts" class="w3-row w3-padding w3-border w3-topbar w3-bottombar w3-margin-top">
 				<div class="w3-col w3-container" style="width: 50%">
 					<label>Parts</label> <input class="w3-input w3-border" type="text"
 						name="parts[]" placeholder="Parts" />
@@ -108,8 +108,8 @@
 				</div>
 			</div>
 
-			<div id="technicians" class="w3-row w3-padding w3-border">
-				<div class="w3-col w3-container" style="width: 50%">
+			<div id="technicians" class="w3-row w3-padding w3-border w3-topbar w3-bottombar w3-margin-top w3-margin-bottom">
+				<div class="w3-col w3-container" style="width: 60%">
 					<label>Technician</label> <input class="w3-input w3-border"
 						type="text" name="technician" placeholder="Technician" />
 				</div>
@@ -167,7 +167,7 @@
 						function() {
 							var div = $("div[id='technicians']");
 							div
-									.append('<div class="w3-col w3-container" style="width:50%"><label>Technician</label><input class="w3-input w3-border" type="text" name="technician" placeholder="Technician"/></div>');
+									.append('<div class="w3-col w3-container" style="width:60%"><label>Technician</label><input class="w3-input w3-border" type="text" name="technician" placeholder="Technician"/></div>');
 						});
 		$("button[id='formSubmit']")
 				.click(
