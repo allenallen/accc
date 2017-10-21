@@ -20,7 +20,7 @@ public class PartsDTO {
 
 	public static List<PartsDTO> buildFromEntities(List<Parts> parts) {
 		return parts.stream().map(part -> {
-			return new PartsDTO(part.getParts(), part.getAmount().toString());
+			return new PartsDTO(part.getDescription(), part.getAmount().toString());
 		}).collect(Collectors.toList());
 	}
 
