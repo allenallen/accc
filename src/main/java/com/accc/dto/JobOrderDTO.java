@@ -28,24 +28,24 @@ public class JobOrderDTO {
 	public static List<JobOrderDTO> buildFromEntities(List<JobOrder> jos) {
 		ArrayList<JobOrderDTO> dtos = new ArrayList<>();
 
-		for (JobOrder jo : jos) {
-			JobOrderDTO dto = new JobOrderDTO();
-			dto.setAddress(jo.getAddress());
-			dto.setContactNumber(jo.getContactNumber());
-			dto.setDate(jo.getDate().toString());
-			dto.setDatePaid(jo.getDatePaid().toString());
-			dto.setDepositDate(jo.getDepositDate().toString());
-			dto.setJobDescriptions(JobDescriptionDTO.buildFromEntities(jo.getJobDescriptions()));
-			dto.setJoNumber(jo.getJoNumber());
-			dto.setMake(jo.getMake());
-			dto.setName(jo.getName());
-			dto.setOdometer(jo.getOdomoter());
-			dto.setParts(PartsDTO.buildFromEntities(jo.getParts()));
-			dto.setPlateNumber(jo.getPlateNumber());
-			dto.setTotalAmountDue(jo.getTotalAmountDue().toString());
-			dto.setVehicleColor(jo.getVehicleColor());
-			dtos.add(dto);
-		}
+//		for (JobOrder jo : jos) {
+//			JobOrderDTO dto = new JobOrderDTO();
+//			dto.setAddress(jo.getAddress());
+//			dto.setContactNumber(jo.getContactNumber());
+//			dto.setDate(jo.getDate().toString());
+//			dto.setDatePaid(jo.getDatePaid().toString());
+//			dto.setDepositDate(jo.getDepositDate().toString());
+//			dto.setJobDescriptions(JobDescriptionDTO.buildFromEntities(jo.getJobDescriptions()));
+//			dto.setJoNumber(jo.getJoNumber());
+//			dto.setMake(jo.getMake());
+//			dto.setName(jo.getName());
+//			dto.setOdometer(jo.getOdomoter());
+//			dto.setParts(PartsDTO.buildFromEntities(jo.getParts()));
+//			dto.setPlateNumber(jo.getPlateNumber());
+//			dto.setTotalAmountDue(jo.getTotalAmountDue().toString());
+//			dto.setVehicleColor(jo.getVehicleColor());
+//			dtos.add(dto);
+//		}
 
 		return dtos;
 	}

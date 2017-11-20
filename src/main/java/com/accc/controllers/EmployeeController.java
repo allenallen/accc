@@ -12,6 +12,6 @@ public class EmployeeController {
 
 	@GetMapping("/get_employee")
 	public Employees getEmployee() {
-		return new Employees("Allen", "Arcenal");
+		return null;
 	}
 }
