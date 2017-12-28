@@ -8,9 +8,13 @@ import com.accc.forms.CarForm;
 
 public interface CarService {
 
-	Car create(Car car);
+	Car create(CarForm form);
 
 	Car update(Car car, CarForm form);
 
 	List<Car> findByCustomer(Customer customer);
+	
+	List<Car> findAll();
+
+	Car findById(String id);
 }

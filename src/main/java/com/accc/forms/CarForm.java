@@ -9,12 +9,17 @@ public class CarForm {
 	private String vehicleColor;
 
 	private String odometer;
+	
+	private String customerId;
+	
+	public CarForm() {}
 
-	public CarForm(String make, String plateNumber, String vehicleColor, String odometer) {
+	public CarForm(String make, String plateNumber, String vehicleColor, String odometer, String customerId) {
 		this.make = make;
 		this.plateNumber = plateNumber;
 		this.vehicleColor = vehicleColor;
 		this.odometer = odometer;
+		this.customerId = customerId;
 	}
 
 	public String getMake() {
@@ -53,6 +58,20 @@ public class CarForm {
 	public String toString() {
 		return "CarForm [make=" + make + ", plateNumber=" + plateNumber + ", vehicleColor=" + vehicleColor
 				+ ", odometer=" + odometer + "]";
+	}
+
+	/**
+	 * @return the customerId
+	 */
+	public String getCustomerId() {
+		return customerId;
+	}
+
+	/**
+	 * @param customerId the customerId to set
+	 */
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
 	}
 
 }

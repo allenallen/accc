@@ -8,12 +8,15 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.Getter;
+
 @Entity
 public class Employees {
 
 	@Id
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@Getter
 	private String id;
 
 	private String firstName;

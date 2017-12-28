@@ -19,9 +19,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.annotations.GenericGenerator;
-
-import com.accc.forms.JobOrderForm;
 
 @Entity
 public class JobOrder {
@@ -69,48 +70,14 @@ public class JobOrder {
 			List<Employees> technician, BigDecimal totalAmountDue, LocalDate datePaid, LocalDate dateDeposit) {
 
 		this.date = date;
-		this.customer = customer;
-		this.car = car;
+		this.setCustomer(customer);
+		this.setCar(car);
 		this.jobDescriptions = jobDescription;
 		this.parts = parts;
 		this.technician = technician;
 		this.totalAmountDue = totalAmountDue;
 		this.datePaid = datePaid;
 		this.dateDeposit = dateDeposit;
-	}
-
-	public static JobOrder buildFromForm(JobOrderForm form) {
-		return null;
-		// JobOrder jo = new JobOrder();
-		// if (form.getId() != null) {
-		// jo.setId(form.getId());
-		// }
-		//
-		// jo.setDate(LocalDate.parse(form.getDate()));
-		// jo.setJoNumber(form.getJoNumber());
-		//
-		// ArrayList<JobDescription> jobDescs = new ArrayList<>();
-		// for (int i = 0; i < form.getJobDescriptions().size(); i++) {
-		// JobDescription jd = new JobDescription();
-		// jd.setJobDescription(form.getJobDescriptions().get(i).getJobDescription());
-		// jd.setLabor(new BigDecimal(form.getJobDescriptions().get(i).getLabor()));
-		// jobDescs.add(jd);
-		// }
-		// jo.setJobDescriptions(jobDescs);
-		//
-		// ArrayList<Parts> parts = new ArrayList<>();
-		// for (int i = 0; i < form.getParts().size(); i++) {
-		// Parts p = new Parts();
-		// p.setDescription(form.getParts().get(i).getParts());
-		// p.setAmount(new BigDecimal(form.getParts().get(i).getAmount()));
-		// parts.add(p);
-		// }
-		// jo.setParts(parts);
-		//
-		// jo.setTotalAmountDue(new BigDecimal(form.getTotalAmountDue()));
-		// jo.setDatePaid(LocalDate.parse(form.getDatePaid()));
-		//
-		// return jo;
 	}
 
 	public String getId() {
@@ -183,5 +150,72 @@ public class JobOrder {
 
 	public void setDateDeposit(LocalDate depositDate) {
 		this.dateDeposit = depositDate;
+	}
+
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder()
+					.append(id)
+					.toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		JobOrder other = (JobOrder) obj;
+
+		return new EqualsBuilder()
+					.append(id, other.id)
+					.isEquals();
+	}
+
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this)
+					.append("id", id)
+					.append("date", date)
+					.append("customer", getCustomer())
+					.append("car", getCar())
+					.append("joNumber", joNumber)
+					.append("jobDescription", jobDescriptions)
+					.append("parts", parts)
+					.append("technician", technician)
+					.append("totalAmountDue", totalAmountDue)
+					.append("datePaid", datePaid)
+					.append("dateDeposit", dateDeposit)
+					.toString();
+	}
+
+	/**
+	 * @return the customer
+	 */
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	/**
+	 * @param customer the customer to set
+	 */
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	/**
+	 * @return the car
+	 */
+	public Car getCar() {
+		return car;
+	}
+
+	/**
+	 * @param car the car to set
+	 */
+	public void setCar(Car car) {
+		this.car = car;
 	}
 }

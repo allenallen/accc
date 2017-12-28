@@ -41,6 +41,11 @@ public class Car {
 		this.customer = customer;
 	}
 	
+	public static Car createFromForm(CarForm form, Customer customer) {
+		Car car = new Car(form.getMake(), form.getPlateNumber(), form.getVehicleColor(), form.getOdometer(), customer);
+		return car;
+	}
+	
 	public void updateFromForm(CarForm form) {
 		this.make = form.getMake();
 		this.plateNumber = form.getPlateNumber();
